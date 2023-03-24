@@ -3,6 +3,7 @@
 
 from flask import Flask
 
+
 def StartFlask():
     """ Start a Flask web application """
     app = Flask(__name__)
