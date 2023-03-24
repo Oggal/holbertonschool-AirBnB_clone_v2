@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """ Start a Flask web application """
 
-import flask
-
+from flask import Flask
 
 def StartFlask():
     """ Start a Flask web application """
-    app = flask.Flask(__name__)
+    app = Flask(__name__)
 
     @app.route('/', strict_slashes=False)
     def hello():
