@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 from models import storage
 
+
 def StartFlask():
     """ Start a Flask web application """
     app = Flask(__name__)
