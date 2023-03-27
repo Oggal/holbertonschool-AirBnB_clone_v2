@@ -15,7 +15,8 @@ import os
 class DBStorage:
     __engine = None
     __session = None
-
+    __all_classes = {"state":State, "city":City, "amenity":Amenity,
+                      "place":Place, "review":Review, "user":User }
     def __init__(self):
         """init engine"""
         data = [0, 0, 0, 0]
@@ -34,11 +35,15 @@ class DBStorage:
     def all(self, cls=None):
         """query on the database"""
         if cls is None:
-            all_classes = [State, City, Amenity, Place, Review, User]
+
             temp = []
-            for c in all_classes:
+            for c in self.__all_classes.values():
                 temp.extend(self.__session.query(c).all())
         else:
+            if type(cls) is str:
+                cls = self.__all_classes.get(cls.lower())
+                if cls is None:
+                    return {}
             temp = self.__session.query(cls).all()
         new_dict = {}
         for obj in temp:
