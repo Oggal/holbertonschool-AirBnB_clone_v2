@@ -19,10 +19,12 @@ def states_list():
     states = storage.all('State')
     return render_template('7-states_list.html', states=states.values())
 
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """ Remove the current SQLAlchemy Session """
     storage.close()
+
 
 if __name__ == "__main__":
     StartFlask()

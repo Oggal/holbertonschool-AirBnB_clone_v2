@@ -15,8 +15,9 @@ import os
 class DBStorage:
     __engine = None
     __session = None
-    __all_classes = {"state":State, "city":City, "amenity":Amenity,
-                      "place":Place, "review":Review, "user":User }
+    __all_classes = {"state": State, "city": City, "amenity": Amenity,
+                     "place": Place, "review": Review, "user": User}
+
     def __init__(self):
         """init engine"""
         data = [0, 0, 0, 0]
