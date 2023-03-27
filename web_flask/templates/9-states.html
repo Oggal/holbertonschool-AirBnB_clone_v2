@@ -12,7 +12,7 @@
             {% for city in states.cities | sort(attribute="name") %}
                 <LI> {{city.id}}: <B>{{city.name}}</B></LI>
             {% endfor %}
-            </UL>
+        </UL>
         {% else %}
         <H1>States</H1>
         <UL>
