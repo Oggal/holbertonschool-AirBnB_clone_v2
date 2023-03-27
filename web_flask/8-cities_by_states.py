@@ -13,7 +13,7 @@ def StartFlask():
     app.run(host='0.0.0.0', port=5000)
 
 
-@app.route('/states_list', strict_slashes=False)
+@app.route('/cities_by_states', strict_slashes=False)
 def states_list():
     """ Display List of States """
     states = storage.all('State')
