@@ -17,7 +17,7 @@ def StartFlask():
 def states_list():
     """ Display List of States """
     states = storage.all('State')
-    return render_template('7-states_list.html', states=states.values())
+    return render_template('8-cities_by_states.html', states=states.values())
 
 
 @app.teardown_appcontext
