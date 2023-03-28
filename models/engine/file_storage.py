@@ -18,10 +18,10 @@ class FileStorage:
                      "place": Place, "review": Review, "user": User}
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        if type(cls) is str:
-            cls = self.__all_classes.get(cls.lower())
         if cls is None:
             return FileStorage.__objects
+        if type(cls) is str:
+            cls = self.__all_classes.get(cls.lower())
         return {k: v for k, v in FileStorage.__objects.items()
                 if type(v) is cls}
 
